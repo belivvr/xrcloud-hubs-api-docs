@@ -68,6 +68,41 @@ import { Bold, APIUrl } from '@site/src/components/text';
 
 :::
 
+## Create a Avatar
+
+> **[POST]** `/v1/avatars`
+
+:::info Request
+
+> Content-Type: `multipart/form-data; boundary=----WebKitFormBoundary...`
+
+- glb: base64 Buffer (example: data:application/octet-stream;base64,...)
+- thumbnail: base64 Buffer (example: data:application/octet-stream;base64,...)
+- name: string
+- active: boolean
+
+:::
+
+:::info Response
+
+- Status: `201 Created`
+- Content-Type: `application/json`
+
+```json
+{
+  "id": "avatar uuid",
+  "name": "avatar name",
+  "thumbnailUrl": "https://...",
+  "glbUrl": "https://...",
+  "active": false, // boolean
+  "accessKey": "project uuid",
+  "created": "created date",
+  "updated": "latest update date"
+}
+```
+
+:::
+
 ## Update a Avatar
 
 > **[PUT/PATCH]** `/v1/avatars/`<Bold>$\{id\}</Bold>

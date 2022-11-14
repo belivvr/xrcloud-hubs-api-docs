@@ -68,6 +68,41 @@ import { Bold, APIUrl } from '@site/src/components/text';
 
 :::
 
+## Create a Emoji
+
+> **[POST]** `/v1/emojis`
+
+:::info Request
+
+> Content-Type: `multipart/form-data; boundary=----WebKitFormBoundary...`
+
+- glb: base64 Buffer (example: data:application/octet-stream;base64,...)
+- thumbnail: base64 Buffer (example: data:application/octet-stream;base64,...)
+- name: string
+- active: boolean
+
+:::
+
+:::info Response
+
+- Status: `201 Created`
+- Content-Type: `application/json`
+
+```json
+{
+  "id": "emoji uuid",
+  "name": "emoji name",
+  "thumbnailUrl": "https://...",
+  "glbUrl": "https://...",
+  "active": false, // boolean
+  "accessKey": "project uuid",
+  "created": "created date",
+  "updated": "latest update date"
+}
+```
+
+:::
+
 ## Update a Emoji
 
 > **[PUT/PATCH]** `/v1/emojis/`<Bold>$\{id\}</Bold>

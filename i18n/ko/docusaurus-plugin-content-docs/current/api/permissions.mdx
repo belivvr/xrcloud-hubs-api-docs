@@ -80,6 +80,57 @@ import { Bold, APIUrl } from '@site/src/components/text';
 
 :::
 
+## Permission 생성
+
+> **[POST]** `/v1/permissions`
+
+:::info 요청
+
+- Content-Type: `application/json`
+
+```json
+{
+  "name": "permission name",
+  "pinObject": false, // boolean. 물체 고정 권한
+  "fly": false, // boolean. 비행 모드 권한
+  "kickUsers": false, // boolean. 유저 추방 권한
+  "muteUsers": false, // boolean. 유저 음소거 권한
+  "amplifyAudio": false, // boolean. 오디오 강화 권한
+  "spawnAndMoveMedia": false, // boolean. 미디어 생성 및 이동 권한
+  "spawnDrawing": false, // boolean. 펜 생성 및 이용 권한
+  "spawnCamera": false, // boolean. 카메라 생성 및 이용 권한
+  "spawnEmoji": false, // boolean. 이모지 사용 권한
+}
+```
+
+:::
+
+:::info 응답
+
+- Status: `201 Created`
+- Content-Type: `application/json`
+
+```json
+{
+  "id": "permission uuid", // uuid
+  "name": "permission name",
+  "pinObject": false, // boolean. 물체 고정 권한
+  "fly": false, // boolean. 비행 모드 권한
+  "kickUsers": false, // boolean. 유저 추방 권한
+  "muteUsers": false, // boolean. 유저 음소거 권한
+  "amplifyAudio": false, // boolean. 오디오 강화 권한
+  "spawnAndMoveMedia": false, // boolean. 미디어 생성 및 이동 권한
+  "spawnDrawing": false, // boolean. 펜 생성 및 이용 권한
+  "spawnCamera": false, // boolean. 카메라 생성 및 이용 권한
+  "spawnEmoji": false, // boolean. 이모지 사용 권한
+  "accessKey": "프로젝트 uuid",
+  "created": "생성 날짜",
+  "updated": "마지막 업데이트 날짜"
+}
+```
+
+:::
+
 ## Permission 정보 업데이트
 
 > **[PUT/PATCH]** `/v1/permissions/`<Bold>$\{id\}</Bold>

@@ -28,7 +28,7 @@ import { Bold, APIUrl } from '@site/src/components/text';
   "count": 10,
   "data": [
     {
-      "id": "3d-model uuid", // uuid
+      "id": "3d-model uuid",
       "name": "3d-model name",
       "thumbnailUrl": "https://...",
       "glbUrl": "https://...",
@@ -55,7 +55,42 @@ import { Bold, APIUrl } from '@site/src/components/text';
 
 ```json
 {
-  "id": "3d-model uuid", // uuid
+  "id": "3d-model uuid",
+  "name": "3d-model name",
+  "thumbnailUrl": "https://...",
+  "glbUrl": "https://...",
+  "active": false, // boolean
+  "accessKey": "project uuid",
+  "created": "created date",
+  "updated": "latest update date"
+}
+```
+
+:::
+
+## 3D Model 생성
+
+> **[POST]** `/v1/3d-models`
+
+:::info 요청
+
+> Content-Type: `multipart/form-data; boundary=----WebKitFormBoundary...`
+
+- glb: base64 Buffer (예: data:application/octet-stream;base64,...)
+- thumbnail: base64 Buffer (예: data:application/octet-stream;base64,...)
+- name: string
+- active: boolean
+
+:::
+
+:::info 응답
+
+- Status: `201 Created`
+- Content-Type: `application/json`
+
+```json
+{
+  "id": "3d-model uuid",
   "name": "3d-model name",
   "thumbnailUrl": "https://...",
   "glbUrl": "https://...",

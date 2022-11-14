@@ -37,15 +37,15 @@ import { Bold, APIUrl } from '@site/src/components/text';
         "thumbnailUrl": "https://...",
         "modelUrl": "https://...", // nullable
         "projectUrl": "https://...",
-        "accessKey": "...", // uuid
+        "accessKey": "project uuid",
         "created": "...",
         "updated": "..."
       },
       "roomSize": 10,
       "current": 10, // nullable
       "autoScale": false,
-      "parentRoom": null, // nullable, only exists `autoScale` is true
-      "accessKey": "...", // uuid
+      "parentRoom": null, // nullable, `autoScale` 이 true 일 때만 존재
+      "accessKey": "project uuid",
       "created": "...",
       "updated": "..."
     },
@@ -76,21 +76,71 @@ import { Bold, APIUrl } from '@site/src/components/text';
     "thumbnailUrl": "https://...",
     "modelUrl": "https://...", // nullable
     "projectUrl": "https://...",
-    "accessKey": "...", // uuid
+    "accessKey": "project uuid",
     "created": "...",
     "updated": "..."
   },
   "roomSize": 10,
   "current": 10, // nullable
   "autoScale": false,
-  "parentRoom": null, // nullable, only exists `autoScale` is true
-  "accessKey": "...", // uuid
+  "parentRoom": null, // nullable, `autoScale` 이 true 일 때만 존재
+  "accessKey": "project uuid",
   "created": "...",
   "updated": "..."
 },
 ```
 
 :::
+
+## Room 생성
+
+> **[POST]** `/v1/rooms`
+
+:::info 요청
+
+- Content-Type: `application/json`
+
+```json
+{
+  "name": "room name",
+  "sceneId": "scene id",
+  "roomSize": 6,
+  "autoScale": false,
+  "parentRoomId": "parent room id" // nullable, `autoScale` 이 true 일 때만 존재
+}
+```
+
+:::
+
+:::info 응답
+
+- Status: `201 Created`
+- Content-Type: `application/json`
+
+```json
+{
+  "id": "room uuid",
+  "hubSid": "...",
+  "name": "...",
+  "scene": {
+    "id": "...", // uuid
+    "name": "...",
+    "thumbnailUrl": "https://...",
+    "modelUrl": "https://...", // nullable
+    "projectUrl": "https://...",
+    "accessKey": "project uuid",
+    "created": "...",
+    "updated": "..."
+  },
+  "roomSize": 10,
+  "current": 10, // nullable
+  "autoScale": false,
+  "parentRoom": null, // nullable, `autoScale` 이 true 일 때만 존재
+  "accessKey": "project uuid",
+  "created": "...",
+  "updated": "..."
+},
+```
 
 ## Room 정보 업데이트
 

@@ -28,7 +28,7 @@ import { Bold, APIUrl } from '@site/src/components/text';
   "count": 10,
   "data": [
     {
-      "id": "3d-model uuid", // uuid
+      "id": "3d-model uuid",
       "name": "3d-model name",
       "thumbnailUrl": "https://...",
       "glbUrl": "https://...",
@@ -55,7 +55,7 @@ import { Bold, APIUrl } from '@site/src/components/text';
 
 ```json
 {
-  "id": "3d-model uuid", // uuid
+  "id": "3d-model uuid",
   "name": "3d-model name",
   "thumbnailUrl": "https://...",
   "glbUrl": "https://...",
@@ -67,6 +67,42 @@ import { Bold, APIUrl } from '@site/src/components/text';
 ```
 
 :::
+
+## Create a 3D Model
+
+> **[POST]** `/v1/3d-models`
+
+:::info Request
+
+> Content-Type: `multipart/form-data; boundary=----WebKitFormBoundary...`
+
+- glb: base64 Buffer (example: data:application/octet-stream;base64,...)
+- thumbnail: base64 Buffer (example: data:application/octet-stream;base64,...)
+- name: string
+- active: boolean
+
+:::
+
+:::info Response
+
+- Status: `201 Created`
+- Content-Type: `application/json`
+
+```json
+{
+  "id": "3d-model uuid",
+  "name": "3d-model name",
+  "thumbnailUrl": "https://...",
+  "glbUrl": "https://...",
+  "active": false, // boolean
+  "accessKey": "project uuid",
+  "created": "created date",
+  "updated": "latest update date"
+}
+```
+
+:::
+
 
 ## Update a 3D Model
 

@@ -28,7 +28,7 @@ import { Bold, APIUrl } from '@site/src/components/text';
   "count": 10,
   "data": [
     {
-      "id": "...", // uuid
+      "id": "room uuid",
       "hubSid": "...",
       "name": "...",
       "scene": {
@@ -67,7 +67,57 @@ import { Bold, APIUrl } from '@site/src/components/text';
 
 ```json
 {
-  "id": "...", // uuid
+  "id": "room uuid",
+  "hubSid": "...",
+  "name": "...",
+  "scene": {
+    "id": "...", // uuid
+    "name": "...",
+    "thumbnailUrl": "https://...",
+    "modelUrl": "https://...", // nullable
+    "projectUrl": "https://...",
+    "accessKey": "...", // uuid
+    "created": "...",
+    "updated": "..."
+  },
+  "roomSize": 10,
+  "current": 10, // nullable
+  "autoScale": false,
+  "parentRoom": null, // nullable, only exists `autoScale` is true
+  "accessKey": "...", // uuid
+  "created": "...",
+  "updated": "..."
+},
+```
+
+## Create a Room
+
+> **[POST]** `/v1/rooms`
+
+:::info Request
+
+- Content-Type: `application/json`
+
+```json
+{
+  "name": "room name",
+  "sceneId": "scene id",
+  "roomSize": 6,
+  "autoScale": false,
+  "parentRoomId": "parent room id" // nullable. can only exists when `autoScale` is true
+}
+```
+
+:::
+
+:::info Response
+
+- Status: `201 Created`
+- Content-Type: `application/json`
+
+```json
+{
+  "id": "room uuid",
   "hubSid": "...",
   "name": "...",
   "scene": {

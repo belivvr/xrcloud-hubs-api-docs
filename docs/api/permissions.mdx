@@ -80,6 +80,55 @@ import { Bold, APIUrl } from '@site/src/components/text';
 
 :::
 
+## Create a Permission
+
+> **[POST]** `/v1/permissions`
+
+:::info Request
+
+```json
+{
+  "name": "permission name",
+  "pinObject": false, // boolean
+  "fly": false, // boolean
+  "kickUsers": false, // boolean
+  "muteUsers": false, // boolean
+  "amplifyAudio": false, // boolean
+  "spawnAndMoveMedia": false, // boolean
+  "spawnDrawing": false, // boolean
+  "spawnCamera": false, // boolean
+  "spawnEmoji": false, // boolean
+}
+```
+
+:::
+
+:::info Response
+
+- Status: `201 Created`
+- Content-Type: `application/json`
+
+```json
+{
+  "id": "permission uuid", // uuid
+  "name": "permission name",
+  "pinObject": false, // boolean
+  "fly": false, // boolean
+  "kickUsers": false, // boolean
+  "muteUsers": false, // boolean
+  "amplifyAudio": false, // boolean
+  "spawnAndMoveMedia": false, // boolean
+  "spawnDrawing": false, // boolean
+  "spawnCamera": false, // boolean
+  "spawnEmoji": false, // boolean
+  "accessKey": "project uuid",
+  "created": "created date",
+  "updated": "latest update date"
+}
+```
+
+:::
+
 ## Update a Permission
 
 > **[PUT/PATCH]** `/v1/permissions/`<Bold>$\{id\}</Bold>
