@@ -9,7 +9,7 @@ import { Bold, APIUrl } from '@site/src/components/text';
 
 ## Room 리스트 조회
 
-`/v1/rooms?take=`<Bold>$\{take\}</Bold>`&page=`<Bold>$\{page\}</Bold>
+> **[GET]** `/v1/rooms?take=`<Bold>$\{take\}</Bold>`&page=`<Bold>$\{page\}</Bold>
 
 :::info 요청 `URL 쿼리 파라미터`
 
@@ -58,7 +58,7 @@ import { Bold, APIUrl } from '@site/src/components/text';
 
 ## Room 정보 조회
 
-`/v1/rooms/`<Bold>$\{id\}</Bold>
+> **[GET]** `/v1/rooms/`<Bold>$\{id\}</Bold>
 
 :::info 응답
 
@@ -94,7 +94,7 @@ import { Bold, APIUrl } from '@site/src/components/text';
 
 ## Room 정보 업데이트
 
-`/v1/rooms/`<Bold>$\{id\}</Bold>
+> **[PUT/PATCH]** `/v1/rooms/`<Bold>$\{id\}</Bold>
 
 :::info 응답
 
@@ -104,7 +104,7 @@ import { Bold, APIUrl } from '@site/src/components/text';
 
 ## Room 삭제
 
-`/v1/rooms/`<Bold>$\{id\}</Bold>
+> **[DELETE]** `/v1/rooms/`<Bold>$\{id\}</Bold>
 
 :::info 응답
 
@@ -114,9 +114,9 @@ import { Bold, APIUrl } from '@site/src/components/text';
 
 ## Room에 들어가기
 
-`/v1/rooms/`<Bold>$\{id\}</Bold>`/enter`
+> **[POST]** `/v1/rooms/`<Bold>$\{id\}</Bold>`/enter`
 
-:::info Request
+:::info 요청
 
 - Content-Type: `application/json`
 
