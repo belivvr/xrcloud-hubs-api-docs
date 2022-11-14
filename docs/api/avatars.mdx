@@ -1,0 +1,89 @@
+---
+sidebar_position: 4
+title: Avatars
+---
+
+import { Bold, APIUrl } from '@site/src/components/text';
+
+> Hubs API URL: <a><APIUrl /></a>
+
+## Get many Avatars
+
+`/v1/avatars?take=`<Bold>$\{take\}</Bold>`&page=`<Bold>$\{page\}</Bold>
+
+:::info Request `URL Query Parameters`
+
+- `take`: number of rooms to return
+- `page`: page number to return
+
+:::
+
+:::info Response
+
+- Status: `200 OK`
+- Content-Type: `application/json`
+
+```json
+{
+  "count": 10,
+  "data": [
+    {
+      "id": "avatar uuid", // uuid
+      "name": "avatar name",
+      "thumbnailUrl": "https://...",
+      "glbUrl": "https://...",
+      "active": false, // boolean
+      "accessKey": "project uuid",
+      "created": "created date",
+      "updated": "latest update date"
+    },
+    ...
+  ]
+}
+```
+
+:::
+
+## Get a Avatar information
+
+`/v1/avatars/`<Bold>$\{id\}</Bold>
+
+:::info Response
+
+- Status: `200 OK`
+- Content-Type: `application/json`
+
+```json
+{
+  "id": "avatar uuid", // uuid
+  "name": "avatar name",
+  "thumbnailUrl": "https://...",
+  "glbUrl": "https://...",
+  "active": false, // boolean
+  "accessKey": "project uuid",
+  "created": "created date",
+  "updated": "latest update date"
+}
+```
+
+:::
+
+## Update a Avatar
+
+`/v1/avatars/`<Bold>$\{id\}</Bold>
+
+:::info Response
+
+- Status: `204 No Content`
+
+:::
+
+## Delete a Avatar
+
+`/v1/avatars/`<Bold>$\{id\}</Bold>
+
+:::info Response
+
+- Status: `204 No Content`
+
+:::
