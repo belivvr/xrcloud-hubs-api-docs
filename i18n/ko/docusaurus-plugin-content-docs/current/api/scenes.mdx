@@ -3,11 +3,13 @@ sidebar_position: 1
 title: Scenes
 ---
 
-import { Bold } from '@site/src/components/text';
+import { Bold, APIUrl } from '@site/src/components/text';
+
+> Hubs API URL: <a><APIUrl /></a>
 
 ## Scenes 리스트 조회
 
-`https://hubs-api.dev.xrcloud.belivvr.com/v1/scenes?take=`<Bold>$\{take\}</Bold>`&page=`<Bold>$\{page\}</Bold>
+`/v1/scenes?take=`<Bold>$\{take\}</Bold>`&page=`<Bold>$\{page\}</Bold>
 
 :::info 요청 `URL 쿼리 파라미터`
 
@@ -44,7 +46,7 @@ import { Bold } from '@site/src/components/text';
 
 ## Scene 정보 조회
 
-`https://hubs-api.dev.xrcloud.belivvr.com/v1/scenes/`<Bold>$\{id\}</Bold>
+`/v1/scenes/`<Bold>$\{id\}</Bold>
 
 :::info 응답
 
@@ -68,7 +70,7 @@ import { Bold } from '@site/src/components/text';
 
 ## Scene 에디터(New)
 
-`https://hubs-api.dev.xrcloud.belivvr.com/v1/scenes/new/spoke`
+`/v1/scenes/new/spoke`
 
 :::info 응답
 
@@ -79,7 +81,7 @@ import { Bold } from '@site/src/components/text';
 
 ## Scene 에디터(ID)
 
-`https://hubs-api.dev.xrcloud.belivvr.com/v1/scenes/`<Bold>$\{id\}</Bold>`/spoke`
+`/v1/scenes/`<Bold>$\{id\}</Bold>`/spoke`
 
 :::info 응답
 
@@ -90,7 +92,7 @@ import { Bold } from '@site/src/components/text';
 
 ## Scene 정보 업데이트
 
-`https://hubs-api.dev.xrcloud.belivvr.com/v1/scenes/`<Bold>$\{id\}</Bold>
+`/v1/scenes/`<Bold>$\{id\}</Bold>
 
 :::info 응답
 
@@ -100,7 +102,7 @@ import { Bold } from '@site/src/components/text';
 
 ## Scene 삭제
 
-`https://hubs-api.dev.xrcloud.belivvr.com/v1/scenes/`<Bold>$\{id\}</Bold>
+`/v1/scenes/`<Bold>$\{id\}</Bold>
 
 :::info 응답
 

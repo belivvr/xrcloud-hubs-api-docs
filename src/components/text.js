@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { url } from '@site/package.json';
+
 /**
  * @typedef { import("react").ReactNode } ReactNode
  */
@@ -14,4 +16,8 @@ import React from 'react';
  */
 export function Bold({ color = 'red', children }) {
   return <strong style={{ color }}>{children}</strong>;
+}
+
+export function APIUrl() {
+  return url;
 }

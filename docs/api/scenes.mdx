@@ -3,11 +3,13 @@ sidebar_position: 1
 title: Scenes
 ---
 
-import { Bold } from '@site/src/components/text';
+import { Bold, APIUrl } from '@site/src/components/text';
+
+> Hubs API URL: <a><APIUrl /></a>
 
 ## Get many Scenes
 
-`https://hubs-api.dev.xrcloud.belivvr.com/v1/scenes?take=`<Bold>$\{take\}</Bold>`&page=`<Bold>$\{page\}</Bold>
+`/v1/scenes?take=`<Bold>$\{take\}</Bold>`&page=`<Bold>$\{page\}</Bold>
 
 :::info Request `URL Query Parameters`
 
@@ -44,7 +46,7 @@ import { Bold } from '@site/src/components/text';
 
 ## Get a Scene information
 
-`https://hubs-api.dev.xrcloud.belivvr.com/v1/scenes/`<Bold>$\{id\}</Bold>
+`/v1/scenes/`<Bold>$\{id\}</Bold>
 
 :::info Response
 
@@ -68,7 +70,7 @@ import { Bold } from '@site/src/components/text';
 
 ## Get Scene Editor(New)
 
-`https://hubs-api.dev.xrcloud.belivvr.com/v1/scenes/new/spoke`
+`/v1/scenes/new/spoke`
 
 :::info Response
 
@@ -79,7 +81,7 @@ import { Bold } from '@site/src/components/text';
 
 ## Get Scene Editor(ID)
 
-`https://hubs-api.dev.xrcloud.belivvr.com/v1/scenes/`<Bold>$\{id\}</Bold>`/spoke`
+`/v1/scenes/`<Bold>$\{id\}</Bold>`/spoke`
 
 :::info Response
 
@@ -90,7 +92,7 @@ import { Bold } from '@site/src/components/text';
 
 ## Update a Scene
 
-`https://hubs-api.dev.xrcloud.belivvr.com/v1/scenes/`<Bold>$\{id\}</Bold>
+`/v1/scenes/`<Bold>$\{id\}</Bold>
 
 :::info Response
 
@@ -100,7 +102,7 @@ import { Bold } from '@site/src/components/text';
 
 ## Delete a Scene
 
-`https://hubs-api.dev.xrcloud.belivvr.com/v1/scenes/`<Bold>$\{id\}</Bold>
+`/v1/scenes/`<Bold>$\{id\}</Bold>
 
 :::info Response
 

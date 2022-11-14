@@ -1,0 +1,102 @@
+---
+sidebar_position: 3
+title: Permissions
+---
+
+import { Bold, APIUrl } from '@site/src/components/text';
+
+> Hubs API URL: <a><APIUrl /></a>
+
+## Permission 리스트 조회
+
+
+`/v1/permissions?take=`<Bold>$\{take\}</Bold>`&page=`<Bold>$\{page\}</Bold>
+
+:::info 요청 `URL 쿼리 파라미터`
+
+- `take`: 한 페이지에 보여줄 Permission 개수
+- `page`: 페이지 번호
+
+:::
+
+:::info 응답
+
+- Status: `200 OK`
+- Content-Type: `application/json`
+
+```json
+{
+  "count": 10,
+  "data": [
+    {
+      "id": "permission uuid", // uuid
+      "name": "permission name",
+      "pinObject": false, // boolean. 물체 고정 권한
+      "fly": false, // boolean. 비행 모드 권한
+      "kickUsers": false, // boolean. 유저 추방 권한
+      "muteUsers": false, // boolean. 유저 음소거 권한
+      "amplifyAudio": false, // boolean. 오디오 강화 권한
+      "spawnAndMoveMedia": false, // boolean. 미디어 생성 및 이동 권한
+      "spawnDrawing": false, // boolean. 펜 생성 및 이용 권한
+      "spawnCamera": false, // boolean. 카메라 생성 및 이용 권한
+      "spawnEmoji": false, // boolean. 이모지 사용 권한
+      "accessKey": "프로젝트 uuid",
+      "created": "생성 날짜",
+      "updated": "마지막 업데이트 날짜"
+    },
+    ...
+  ]
+}
+```
+
+:::
+
+## Permission 정보 조회
+
+package.url `/v1/permissions/`<Bold>$\{id\}</Bold>
+
+:::info 응답
+
+- Status: `200 OK`
+- Content-Type: `application/json`
+
+```json
+{
+  "id": "permission uuid", // uuid
+  "name": "permission name",
+  "pinObject": false, // boolean. 물체 고정 권한
+  "fly": false, // boolean. 비행 모드 권한
+  "kickUsers": false, // boolean. 유저 추방 권한
+  "muteUsers": false, // boolean. 유저 음소거 권한
+  "amplifyAudio": false, // boolean. 오디오 강화 권한
+  "spawnAndMoveMedia": false, // boolean. 미디어 생성 및 이동 권한
+  "spawnDrawing": false, // boolean. 펜 생성 및 이용 권한
+  "spawnCamera": false, // boolean. 카메라 생성 및 이용 권한
+  "spawnEmoji": false, // boolean. 이모지 사용 권한
+  "accessKey": "프로젝트 uuid",
+  "created": "생성 날짜",
+  "updated": "마지막 업데이트 날짜"
+}
+```
+
+:::
+
+## Permission 정보 업데이트
+
+package.url `/v1/permissions/`<Bold>$\{id\}</Bold>
+
+:::info 응답
+
+- Status: `204 No Content`
+
+:::
+
+## Permission 삭제
+
+package.url `/v1/permissions/`<Bold>$\{id\}</Bold>
+
+:::info 응답
+
+- Status: `204 No Content`
+
+:::
