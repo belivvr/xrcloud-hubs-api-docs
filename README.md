@@ -1,41 +1,25 @@
-# Website
+<div align="center">
+  <img src="https://avatars.githubusercontent.com/u/40684200?s=200&v=4" alt="Belivvr Logo" />
+</div>
 
-This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
+<div align="center">
+  <img src="https://img.shields.io/badge/Docusaurus-07C160?style=for-the-badge&logoColor=white" alt="Docusaurus" />
+</div>
 
-### Installation
+## Description
 
-```
-$ yarn
-```
+XRCloud Hubs API Documents
 
-### Local Development
+## Local Development
 
-```
-$ yarn start
-```
-
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
-
-### Build
-
-```
-$ yarn build
+```console
+$ bun i
+$ bun start
 ```
 
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
+and open http://localhost:3000
 
-### Deployment
+## How to add language?
 
-Using SSH:
-
-```
-$ USE_SSH=true yarn deploy
-```
-
-Not using SSH:
-
-```
-$ GIT_USER=<Your GitHub username> yarn deploy
-```
-
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+- copy `i18n/ko` and paste your language
+- Fix messages in your language directory
