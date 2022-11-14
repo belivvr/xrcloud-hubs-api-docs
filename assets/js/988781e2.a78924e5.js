@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkxrcloud_hubs_api_docs=self.webpackChunkxrcloud_hubs_api_docs||[]).push([[493],{6800:i=>{i.exports=JSON.parse('{"title":"API","slug":"/category/api","permalink":"/docs/category/api","navigation":{"next":{"title":"Introduction","permalink":"/docs/api/introduction"}}}')}}]);
