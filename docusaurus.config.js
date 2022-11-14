@@ -48,7 +48,7 @@ const config = {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl: 'https://github.com/belivvr/xrcloud-3rd-app-user-api-doc/tree/main/docs/',
+          editUrl: 'https://github.com/belivvr/xrcloud-hubs-api-docs/tree/main/docs/',
         },
         // blog: {
         //   showReadingTime: true,
