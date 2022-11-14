@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkxrcloud_hubs_api_docs=self.webpackChunkxrcloud_hubs_api_docs||[]).push([[494],{8053:e=>{e.exports=JSON.parse('{"title":"API","slug":"/category/api","permalink":"/ko/docs/category/api","navigation":{"next":{"title":"Scenes","permalink":"/ko/docs/api/scenes"}}}')}}]);
