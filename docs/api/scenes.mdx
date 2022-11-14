@@ -3,17 +3,22 @@ sidebar_position: 1
 title: Scenes
 ---
 
-export function Bold({ color = "red", children }) {
-  return <strong style={{ color }}>{children}</strong>;
-}
+import { Bold } from '@site/src/components/text';
 
 ## Get many Scenes
 
 `https://hubs-api.dev.xrcloud.belivvr.com/v1/scenes?take=`<Bold>$\{take\}</Bold>`&page=`<Bold>$\{page\}</Bold>
 
+:::info Request `URL Query Parameters`
+
+- `take`: number of rooms to return
+- `page`: page number to return
+
+:::
+
 :::info Response
 
-- Status: `200`
+- Status: `200 OK`
 - Content-Type: `application/json`
 
 ```json
@@ -43,7 +48,7 @@ export function Bold({ color = "red", children }) {
 
 :::info Response
 
-- Status: `200`
+- Status: `200 OK`
 - Content-Type: `application/json`
 
 ```json
@@ -67,7 +72,7 @@ export function Bold({ color = "red", children }) {
 
 :::info Response
 
-- Status: `200`
+- Status: `200 OK`
 - Content-Type: `text/html`
 
 :::
@@ -78,7 +83,7 @@ export function Bold({ color = "red", children }) {
 
 :::info Response
 
-- Status: `200`
+- Status: `200 OK`
 - Content-Type: `text/html`
 
 :::

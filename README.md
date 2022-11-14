@@ -15,6 +15,9 @@ XRCloud Hubs API Documents
 ```console
 $ bun i
 $ bun start
+
+// if you want to start your language, for example korean:
+$ bun start --locale ko
 ```
 
 and open http://localhost:3000

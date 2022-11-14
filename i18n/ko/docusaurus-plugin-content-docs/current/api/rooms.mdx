@@ -1,0 +1,137 @@
+---
+sidebar_position: 2
+title: Rooms
+---
+
+import { Bold } from '@site/src/components/text';
+
+## Room 리스트 조회
+
+`https://hubs-api.dev.xrcloud.belivvr.com/v1/rooms?take=`<Bold>$\{take\}</Bold>`&page=`<Bold>$\{page\}</Bold>
+
+:::info 요청 `URL 쿼리 파라미터`
+
+- `take`: 한 페이지에 보여줄 Room 개수
+- `page`: 페이지 번호
+
+:::
+
+:::info 응답
+
+- Status: `200 OK`
+- Content-Type: `application/json`
+
+```json
+{
+  "count": 10,
+  "data": [
+    {
+      "id": "...", // uuid
+      "hubSid": "...",
+      "name": "...",
+      "scene": {
+        "id": "...", // uuid
+        "name": "...",
+        "thumbnailUrl": "https://...",
+        "modelUrl": "https://...", // nullable
+        "projectUrl": "https://...",
+        "accessKey": "...", // uuid
+        "created": "...",
+        "updated": "..."
+      },
+      "roomSize": 10,
+      "current": 10, // nullable
+      "autoScale": false,
+      "parentRoom": null, // nullable, only exists `autoScale` is true
+      "accessKey": "...", // uuid
+      "created": "...",
+      "updated": "..."
+    },
+    ...
+  ]
+}
+```
+
+:::
+
+## Room 정보 조회
+
+`https://hubs-api.dev.xrcloud.belivvr.com/v1/rooms/`<Bold>$\{id\}</Bold>
+
+:::info 응답
+
+- Status: `200 OK`
+- Content-Type: `application/json`
+
+```json
+{
+  "id": "...", // uuid
+  "hubSid": "...",
+  "name": "...",
+  "scene": {
+    "id": "...", // uuid
+    "name": "...",
+    "thumbnailUrl": "https://...",
+    "modelUrl": "https://...", // nullable
+    "projectUrl": "https://...",
+    "accessKey": "...", // uuid
+    "created": "...",
+    "updated": "..."
+  },
+  "roomSize": 10,
+  "current": 10, // nullable
+  "autoScale": false,
+  "parentRoom": null, // nullable, only exists `autoScale` is true
+  "accessKey": "...", // uuid
+  "created": "...",
+  "updated": "..."
+},
+```
+
+:::
+
+## Room 정보 업데이트
+
+`https://hubs-api.dev.xrcloud.belivvr.com/v1/rooms/`<Bold>$\{id\}</Bold>
+
+:::info 응답
+
+- Status: `204 No Content`
+
+:::
+
+## Room 삭제
+
+`https://hubs-api.dev.xrcloud.belivvr.com/v1/rooms/`<Bold>$\{id\}</Bold>
+
+:::info 응답
+
+- Status: `204 No Content`
+
+:::
+
+## Room에 들어가기
+
+`https://hubs-api.dev.xrcloud.belivvr.com/v1/rooms/`<Bold>$\{id\}</Bold>`/enter`
+
+:::info Request
+
+- Content-Type: `application/json`
+
+```json
+{
+  "nickname": "nickname",
+  "avatarId": "avatar uuid", // or url
+  "permissionId": "permission uuid",
+  "leaveUrl": "https://..." // When click 'leave' button's destination. default is `/`
+}
+```
+
+:::
+
+:::info 응답
+
+- Status: `200 OK`
+- Content-Type: `text/html`
+
+:::

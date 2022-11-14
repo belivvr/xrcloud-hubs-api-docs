@@ -1,0 +1,137 @@
+---
+sidebar_position: 2
+title: Rooms
+---
+
+import { Bold } from '@site/src/components/text';
+
+## Get many Rooms
+
+`https://hubs-api.dev.xrcloud.belivvr.com/v1/rooms?take=`<Bold>$\{take\}</Bold>`&page=`<Bold>$\{page\}</Bold>
+
+:::info Request `URL Query Parameters`
+
+- `take`: number of rooms to return
+- `page`: page number to return
+
+:::
+
+:::info Response
+
+- Status: `200 OK`
+- Content-Type: `application/json`
+
+```json
+{
+  "count": 10,
+  "data": [
+    {
+      "id": "...", // uuid
+      "hubSid": "...",
+      "name": "...",
+      "scene": {
+        "id": "...", // uuid
+        "name": "...",
+        "thumbnailUrl": "https://...",
+        "modelUrl": "https://...", // nullable
+        "projectUrl": "https://...",
+        "accessKey": "...", // uuid
+        "created": "...",
+        "updated": "..."
+      },
+      "roomSize": 10,
+      "current": 10, // nullable
+      "autoScale": false,
+      "parentRoom": null, // nullable, only exists `autoScale` is true
+      "accessKey": "...", // uuid
+      "created": "...",
+      "updated": "..."
+    },
+    ...
+  ]
+}
+```
+
+:::
+
+## Get a Room information
+
+`https://hubs-api.dev.xrcloud.belivvr.com/v1/rooms/`<Bold>$\{id\}</Bold>
+
+:::info Response
+
+- Status: `200 OK`
+- Content-Type: `application/json`
+
+```json
+{
+  "id": "...", // uuid
+  "hubSid": "...",
+  "name": "...",
+  "scene": {
+    "id": "...", // uuid
+    "name": "...",
+    "thumbnailUrl": "https://...",
+    "modelUrl": "https://...", // nullable
+    "projectUrl": "https://...",
+    "accessKey": "...", // uuid
+    "created": "...",
+    "updated": "..."
+  },
+  "roomSize": 10,
+  "current": 10, // nullable
+  "autoScale": false,
+  "parentRoom": null, // nullable, only exists `autoScale` is true
+  "accessKey": "...", // uuid
+  "created": "...",
+  "updated": "..."
+},
+```
+
+:::
+
+## Update a Room
+
+`https://hubs-api.dev.xrcloud.belivvr.com/v1/rooms/`<Bold>$\{id\}</Bold>
+
+:::info Response
+
+- Status: `204 No Content`
+
+:::
+
+## Delete a Room
+
+`https://hubs-api.dev.xrcloud.belivvr.com/v1/rooms/`<Bold>$\{id\}</Bold>
+
+:::info Response
+
+- Status: `204 No Content`
+
+:::
+
+## Enter the Room
+
+`https://hubs-api.dev.xrcloud.belivvr.com/v1/rooms/`<Bold>$\{id\}</Bold>`/enter`
+
+:::info Request
+
+- Content-Type: `application/json`
+
+```json
+{
+  "nickname": "nickname",
+  "avatarId": "avatar uuid", // or url
+  "permissionId": "permission uuid",
+  "leaveUrl": "https://..." // When click 'leave' button's destination. default is `/`
+}
+```
+
+:::
+
+:::info Response
+
+- Status: `200 OK`
+- Content-Type: `text/html`
+
+:::

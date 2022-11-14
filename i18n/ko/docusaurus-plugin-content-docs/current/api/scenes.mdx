@@ -3,17 +3,22 @@ sidebar_position: 1
 title: Scenes
 ---
 
-export function Bold({ color = "red", children }) {
-  return <strong style={{ color }}>{children}</strong>;
-}
+import { Bold } from '@site/src/components/text';
 
 ## Scenes 리스트 조회
 
 `https://hubs-api.dev.xrcloud.belivvr.com/v1/scenes?take=`<Bold>$\{take\}</Bold>`&page=`<Bold>$\{page\}</Bold>
 
-:::info Response
+:::info 요청 `URL 쿼리 파라미터`
 
-- Status: `200`
+- `take`: 한 페이지에 보여줄 Room 개수
+- `page`: 페이지 번호
+
+:::
+
+:::info 응답
+
+- Status: `200 OK`
 - Content-Type: `application/json`
 
 ```json
@@ -41,9 +46,9 @@ export function Bold({ color = "red", children }) {
 
 `https://hubs-api.dev.xrcloud.belivvr.com/v1/scenes/`<Bold>$\{id\}</Bold>
 
-:::info Response
+:::info 응답
 
-- Status: `200`
+- Status: `200 OK`
 - Content-Type: `application/json`
 
 ```json
@@ -65,9 +70,9 @@ export function Bold({ color = "red", children }) {
 
 `https://hubs-api.dev.xrcloud.belivvr.com/v1/scenes/new/spoke`
 
-:::info Response
+:::info 응답
 
-- Status: `200`
+- Status: `200 OK`
 - Content-Type: `text/html`
 
 :::
@@ -76,9 +81,9 @@ export function Bold({ color = "red", children }) {
 
 `https://hubs-api.dev.xrcloud.belivvr.com/v1/scenes/`<Bold>$\{id\}</Bold>`/spoke`
 
-:::info Response
+:::info 응답
 
-- Status: `200`
+- Status: `200 OK`
 - Content-Type: `text/html`
 
 :::
@@ -87,7 +92,7 @@ export function Bold({ color = "red", children }) {
 
 `https://hubs-api.dev.xrcloud.belivvr.com/v1/scenes/`<Bold>$\{id\}</Bold>
 
-:::info Response
+:::info 응답
 
 - Status: `204 No Content`
 
@@ -97,7 +102,7 @@ export function Bold({ color = "red", children }) {
 
 `https://hubs-api.dev.xrcloud.belivvr.com/v1/scenes/`<Bold>$\{id\}</Bold>
 
-:::info Response
+:::info 응답
 
 - Status: `204 No Content`
 
