@@ -11,8 +11,12 @@ import { Bold, APIUrl } from '@site/src/components/text';
 
 > **[GET]** `/v1/scenes?take=`<Bold>$\{take\}</Bold>`&page=`<Bold>$\{page\}</Bold>
 
-:::info 요청 `URL 쿼리 파라미터`
+:::info 요청
 
+#### Headers
+- Authorization: Bearer {accessToken}
+
+#### URL 쿼리 파라미터
 - `take`: 한 페이지에 보여줄 Room 개수
 - `page`: 페이지 번호
 
@@ -48,6 +52,13 @@ import { Bold, APIUrl } from '@site/src/components/text';
 
 > **[GET]** `/v1/scenes/`<Bold>$\{id\}</Bold>
 
+:::info 요청
+
+#### Headers
+- Authorization: Bearer {accessToken}
+
+:::
+
 :::info 응답
 
 - Status: `200 OK`
@@ -72,6 +83,13 @@ import { Bold, APIUrl } from '@site/src/components/text';
 
 > **[GET]** `/v1/scenes/new/spoke`
 
+:::info 요청
+
+#### Headers
+- Authorization: Bearer {accessToken}
+
+:::
+
 :::info 응답
 
 - Status: `200 OK`
@@ -82,6 +100,13 @@ import { Bold, APIUrl } from '@site/src/components/text';
 ## Scene 에디터(ID)
 
 > **[GET]** `/v1/scenes/`<Bold>$\{id\}</Bold>`/spoke`
+
+:::info 요청
+
+#### Headers
+- Authorization: Bearer {accessToken}
+
+:::
 
 :::info 응답
 
@@ -94,6 +119,21 @@ import { Bold, APIUrl } from '@site/src/components/text';
 
 > **[PUT/PATCH]** `/v1/scenes/`<Bold>$\{id\}</Bold>
 
+:::info 요청
+
+#### Headers
+- Authorization: Bearer {accessToken}
+- Content-Type: application/json
+
+#### Body
+```json
+{
+  "name": "...",
+}
+```
+
+:::
+
 :::info 응답
 
 - Status: `204 No Content`
@@ -103,6 +143,13 @@ import { Bold, APIUrl } from '@site/src/components/text';
 ## Scene 삭제
 
 > **[DELETE]** `/v1/scenes/`<Bold>$\{id\}</Bold>
+
+:::info 요청
+
+#### Headers
+- Authorization: Bearer {accessToken}
+
+:::
 
 :::info 응답
 

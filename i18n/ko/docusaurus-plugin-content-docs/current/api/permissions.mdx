@@ -11,8 +11,12 @@ import { Bold, APIUrl } from '@site/src/components/text';
 
 > **[GET]** `/v1/permissions?take=`<Bold>$\{take\}</Bold>`&page=`<Bold>$\{page\}</Bold>
 
-:::info 요청 `URL 쿼리 파라미터`
+:::info 요청
 
+#### Headers
+- Authorization: Bearer {accessToken}
+
+#### URL 쿼리 파라미터
 - `take`: 한 페이지에 보여줄 Permission 개수
 - `page`: 페이지 번호
 
@@ -54,6 +58,13 @@ import { Bold, APIUrl } from '@site/src/components/text';
 
 > **[GET]** > **[GET]** `/v1/permissions/`<Bold>$\{id\}</Bold>
 
+:::info 요청
+
+#### Headers
+- Authorization: Bearer {accessToken}
+
+:::
+
 :::info 응답
 
 - Status: `200 OK`
@@ -86,8 +97,11 @@ import { Bold, APIUrl } from '@site/src/components/text';
 
 :::info 요청
 
-- Content-Type: `application/json`
+#### Headers
+- Authorization: Bearer {accessToken}
+- Content-Type: application/json
 
+#### Body
 ```json
 {
   "name": "permission name",
@@ -135,6 +149,30 @@ import { Bold, APIUrl } from '@site/src/components/text';
 
 > **[PUT/PATCH]** `/v1/permissions/`<Bold>$\{id\}</Bold>
 
+:::info 요청
+
+#### Headers
+- Authorization: Bearer {accessToken}
+- Content-Type: application/json
+
+#### Body
+```json
+{
+  "name": "permission name", // optional.
+  "pinObject": false, // boolean. optional.
+  "fly": false, // boolean. optional.
+  "kickUsers": false, // boolean. optional.
+  "muteUsers": false, // boolean. optional.
+  "amplifyAudio": false, // boolean. optional.
+  "spawnAndMoveMedia": false, // boolean. optional.
+  "spawnDrawing": false, // boolean. optional.
+  "spawnCamera": false, // boolean. optional.
+  "spawnEmoji": false, // boolean. optional.
+}
+```
+
+:::
+
 :::info 응답
 
 - Status: `204 No Content`
@@ -142,6 +180,13 @@ import { Bold, APIUrl } from '@site/src/components/text';
 :::
 
 ## Permission 삭제
+
+:::info 요청
+
+#### Headers
+- Authorization: Bearer {accessToken}
+
+:::
 
 > **[DELETE]** `/v1/permissions/`<Bold>$\{id\}</Bold>
 

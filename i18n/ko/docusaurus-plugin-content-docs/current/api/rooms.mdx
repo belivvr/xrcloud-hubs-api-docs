@@ -11,8 +11,12 @@ import { Bold, APIUrl } from '@site/src/components/text';
 
 > **[GET]** `/v1/rooms?take=`<Bold>$\{take\}</Bold>`&page=`<Bold>$\{page\}</Bold>
 
-:::info 요청 `URL 쿼리 파라미터`
+:::info 요청 
 
+#### Headers
+- Authorization: Bearer {accessToken}
+
+#### URL 쿼리 파라미터
 - `take`: 한 페이지에 보여줄 Room 개수
 - `page`: 페이지 번호
 
@@ -60,6 +64,13 @@ import { Bold, APIUrl } from '@site/src/components/text';
 
 > **[GET]** `/v1/rooms/`<Bold>$\{id\}</Bold>
 
+:::info 요청
+
+#### Headers
+- Authorization: Bearer {accessToken}
+
+:::
+
 :::info 응답
 
 - Status: `200 OK`
@@ -98,8 +109,11 @@ import { Bold, APIUrl } from '@site/src/components/text';
 
 :::info 요청
 
-- Content-Type: `application/json`
+#### Headers
+- Authorization: Bearer {accessToken}
+- Content-Type: application/json
 
+#### Body
 ```json
 {
   "name": "room name",
@@ -142,9 +156,27 @@ import { Bold, APIUrl } from '@site/src/components/text';
 },
 ```
 
+:::
+
 ## Room 정보 업데이트
 
 > **[PUT/PATCH]** `/v1/rooms/`<Bold>$\{id\}</Bold>
+
+:::info 요청
+
+#### Headers
+- Authorization: Bearer {accessToken}
+- Content-Type: application/json
+
+#### Body
+```json
+{
+  "name": "room name", // optional
+  "roomSize": 7 // optional
+}
+```
+
+:::
 
 :::info 응답
 
@@ -155,6 +187,13 @@ import { Bold, APIUrl } from '@site/src/components/text';
 ## Room 삭제
 
 > **[DELETE]** `/v1/rooms/`<Bold>$\{id\}</Bold>
+
+:::info 요청
+
+#### Headers
+- Authorization: Bearer {accessToken}
+
+:::
 
 :::info 응답
 
@@ -168,8 +207,11 @@ import { Bold, APIUrl } from '@site/src/components/text';
 
 :::info 요청
 
+#### Headers
+- Authorization: Bearer {accessToken}
 - Content-Type: `application/json`
 
+#### Body
 ```json
 {
   "nickname": "nickname",

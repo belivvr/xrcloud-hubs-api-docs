@@ -11,8 +11,12 @@ import { Bold, APIUrl } from '@site/src/components/text';
 
 > **[GET]** `/v1/3d-models?take=`<Bold>$\{take\}</Bold>`&page=`<Bold>$\{page\}</Bold>
 
-:::info Request `URL Query Parameters`
+:::info Request
 
+#### Headers
+- Authorization: Bearer {accessToken}
+
+#### URL Query Parameters
 - `take`: number of rooms to return
 - `page`: page number to return
 
@@ -48,6 +52,13 @@ import { Bold, APIUrl } from '@site/src/components/text';
 
 > **[GET]** `/v1/3d-models/`<Bold>$\{id\}</Bold>
 
+:::info Request
+
+#### Headers
+- Authorization: Bearer {accessToken}
+
+:::
+
 :::info Response
 
 - Status: `200 OK`
@@ -74,8 +85,11 @@ import { Bold, APIUrl } from '@site/src/components/text';
 
 :::info Request
 
-> Content-Type: `multipart/form-data; boundary=----WebKitFormBoundary...`
+#### Headers
+- Authorization: Bearer {accessToken}
+- Content-Type: `multipart/form-data; boundary=----WebKitFormBoundary...`
 
+#### Body
 - glb: base64 Buffer (example: data:application/octet-stream;base64,...)
 - thumbnail: base64 Buffer (example: data:application/octet-stream;base64,...)
 - name: string
@@ -108,6 +122,20 @@ import { Bold, APIUrl } from '@site/src/components/text';
 
 > **[PUT/PATCH]** `/v1/3d-models/`<Bold>$\{id\}</Bold>
 
+:::info Request
+
+#### Headers
+- Authorization: Bearer {accessToken}
+- Content-Type: `multipart/form-data; boundary=----WebKitFormBoundary...`
+
+#### Body
+- glb(optional): base64 Buffer (example: data:application/octet-stream;base64,...)
+- thumbnail(optional): base64 Buffer (example: data:application/octet-stream;base64,...)
+- name(optional): string
+- active(optional): boolean
+
+:::
+
 :::info Response
 
 - Status: `204 No Content`
@@ -117,6 +145,13 @@ import { Bold, APIUrl } from '@site/src/components/text';
 ## Delete a 3D Model
 
 > **[DELETE]** `/v1/3d-models/`<Bold>$\{id\}</Bold>
+
+:::info Request
+
+#### Headers
+- Authorization: Bearer {accessToken}
+
+:::
 
 :::info Response
 

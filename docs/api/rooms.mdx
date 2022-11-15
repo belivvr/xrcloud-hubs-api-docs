@@ -11,8 +11,12 @@ import { Bold, APIUrl } from '@site/src/components/text';
 
 > **[GET]** `/v1/rooms?take=`<Bold>$\{take\}</Bold>`&page=`<Bold>$\{page\}</Bold>
 
-:::info Request `URL Query Parameters`
+:::info Request 
 
+#### Headers
+- Authorization: Bearer {accessToken}
+
+#### URL Query Parameters
 - `take`: number of rooms to return
 - `page`: page number to return
 
@@ -60,6 +64,13 @@ import { Bold, APIUrl } from '@site/src/components/text';
 
 > **[GET]** `/v1/rooms/`<Bold>$\{id\}</Bold>
 
+:::info Request
+
+#### Headers
+- Authorization: Bearer {accessToken}
+
+:::
+
 :::info Response
 
 - Status: `200 OK`
@@ -90,14 +101,19 @@ import { Bold, APIUrl } from '@site/src/components/text';
 },
 ```
 
+:::
+
 ## Create a Room
 
 > **[POST]** `/v1/rooms`
 
 :::info Request
 
-- Content-Type: `application/json`
+#### Headers
+- Authorization: Bearer {accessToken}
+- Content-Type: application/json
 
+#### Body
 ```json
 {
   "name": "room name",
@@ -146,6 +162,22 @@ import { Bold, APIUrl } from '@site/src/components/text';
 
 > **[PUT/PATCH]** `/v1/rooms/`<Bold>$\{id\}</Bold>
 
+:::info Request
+
+#### Headers
+- Authorization: Bearer {accessToken}
+- Content-Type: application/json
+
+#### Body
+```json
+{
+  "name": "room name", // optional
+  "roomSize": 7 // optional
+}
+```
+
+:::
+
 :::info Response
 
 - Status: `204 No Content`
@@ -155,6 +187,13 @@ import { Bold, APIUrl } from '@site/src/components/text';
 ## Delete a Room
 
 > **[DELETE]** `/v1/rooms/`<Bold>$\{id\}</Bold>
+
+:::info Request
+
+#### Headers
+- Authorization: Bearer {accessToken}
+
+:::
 
 :::info Response
 
@@ -168,8 +207,11 @@ import { Bold, APIUrl } from '@site/src/components/text';
 
 :::info Request
 
+#### Headers
+- Authorization: Bearer {accessToken}
 - Content-Type: `application/json`
 
+#### Body
 ```json
 {
   "nickname": "nickname",

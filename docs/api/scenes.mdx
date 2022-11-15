@@ -11,8 +11,12 @@ import { Bold, APIUrl } from '@site/src/components/text';
 
 > **[GET]** `/v1/scenes?take=`<Bold>$\{take\}</Bold>`&page=`<Bold>$\{page\}</Bold>
 
-:::info Request `URL Query Parameters`
+:::info Request
 
+#### Headers
+- Authorization: Bearer {accessToken}
+
+#### URL Query Parameters
 - `take`: number of rooms to return
 - `page`: page number to return
 
@@ -48,6 +52,13 @@ import { Bold, APIUrl } from '@site/src/components/text';
 
 > **[GET]** `/v1/scenes/`<Bold>$\{id\}</Bold>
 
+:::info Request
+
+#### Headers
+- Authorization: Bearer {accessToken}
+
+:::
+
 :::info Response
 
 - Status: `200 OK`
@@ -72,6 +83,13 @@ import { Bold, APIUrl } from '@site/src/components/text';
 
 > **[GET]** `/v1/scenes/new/spoke`
 
+:::info Request
+
+#### Headers
+- Authorization: Bearer {accessToken}
+
+:::
+
 :::info Response
 
 - Status: `200 OK`
@@ -83,6 +101,13 @@ import { Bold, APIUrl } from '@site/src/components/text';
 
 > **[GET]** `/v1/scenes/`<Bold>$\{id\}</Bold>`/spoke`
 
+:::info Request
+
+#### Headers
+- Authorization: Bearer {accessToken}
+
+:::
+
 :::info Response
 
 - Status: `200 OK`
@@ -93,6 +118,20 @@ import { Bold, APIUrl } from '@site/src/components/text';
 ## Update a Scene
 
 > **[PUT/PATCH]** `/v1/scenes/`<Bold>$\{id\}</Bold>
+
+:::info Request
+
+#### Headers
+- Authorization: Bearer {accessToken}
+
+#### Body
+```json
+{
+  "name": "...",
+}
+```
+
+:::
 
 :::info Response
 

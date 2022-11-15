@@ -11,8 +11,12 @@ import { Bold, APIUrl } from '@site/src/components/text';
 
 > **[GET]** `/v1/emojis?take=`<Bold>$\{take\}</Bold>`&page=`<Bold>$\{page\}</Bold>
 
-:::info 요청 `URL Query Parameters`
+:::info 요청
 
+#### Headers
+- Authorization: Bearer {accessToken}
+
+#### URL 쿼리 파라미터
 - `take`: number of rooms to return
 - `page`: page number to return
 
@@ -48,6 +52,13 @@ import { Bold, APIUrl } from '@site/src/components/text';
 
 > **[GET]** `/v1/emojis/`<Bold>$\{id\}</Bold>
 
+:::info 요청
+
+#### Headers
+- Authorization: Bearer {accessToken}
+
+:::
+
 :::info 응답
 
 - Status: `200 OK`
@@ -68,24 +79,17 @@ import { Bold, APIUrl } from '@site/src/components/text';
 
 :::
 
-## Emoji 정보 업데이트
-
-> **[PUT/PATCH]** `/v1/emojis/`<Bold>$\{id\}</Bold>
-
-:::info 응답
-
-- Status: `204 No Content`
-
-:::
-
 ## Emoji 생성
 
 > **[POST]** `/v1/emojis`
 
 :::info 요청
 
-> Content-Type: `multipart/form-data; boundary=----WebKitFormBoundary...`
+#### Headers
+- Authorization: Bearer {accessToken}
+- Content-Type: `multipart/form-data; boundary=----WebKitFormBoundary...`
 
+#### Body
 - glb: base64 Buffer (예: data:application/octet-stream;base64,...)
 - thumbnail: base64 Buffer (예: data:application/octet-stream;base64,...)
 - name: string
@@ -111,9 +115,42 @@ import { Bold, APIUrl } from '@site/src/components/text';
 }
 ```
 
+:::
+
+## Emoji 정보 업데이트
+
+> **[PUT/PATCH]** `/v1/emojis/`<Bold>$\{id\}</Bold>
+
+:::info 요청
+
+#### Headers
+- Authorization: Bearer {accessToken}
+- Content-Type: `multipart/form-data; boundary=----WebKitFormBoundary...`
+
+#### Body
+- glb(optional): base64 Buffer (예: data:application/octet-stream;base64,...)
+- thumbnail(optional): base64 Buffer (예: data:application/octet-stream;base64,...)
+- name(optional): string
+- active(optional): boolean
+
+:::
+
+:::info 응답
+
+- Status: `204 No Content`
+
+:::
+
 ## Emoji 삭제
 
 > **[DELETE]** `/v1/emojis/`<Bold>$\{id\}</Bold>
+
+:::info 요청
+
+#### Headers
+- Authorization: Bearer {accessToken}
+
+:::
 
 :::info 응답
 
