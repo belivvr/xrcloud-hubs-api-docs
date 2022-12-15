@@ -3,7 +3,7 @@ name: Deploy GitHub Pages (Dev stage)
 on:
   push:
     branches:
-      - main
+      - dev
 
 jobs:
   deploy-github-pages:
@@ -23,7 +23,7 @@ jobs:
       - name: Install and Build
         run: |
           bun i
-          sed -i 's/http:\/\/localhost:3001/https:\/\/hubs-api.dev.xrcloud.belivvr.com/g' ./package.json
+          sed -i 's/http:\/\/localhost:3001/https:\/\/docs.hubs-api.dev.xrcloud.belivvr.com/g' ./package.json
           bun run build
         env:
           CI: true
