@@ -43,6 +43,7 @@ import { Bold, APIUrl } from '@site/src/components/text';
         "thumbnailUrl": "https://...",
         "modelUrl": "https://...", // nullable
         "projectUrl": "https://...",
+        "custom-data": "...",
         "accessKey": "project uuid",
         "created": "...",
         "updated": "..."
@@ -51,6 +52,7 @@ import { Bold, APIUrl } from '@site/src/components/text';
       "current": 10, // nullable
       "autoScale": false,
       "parentRoom": null, // nullable, `autoScale` 이 true 일 때만 존재
+      "custom-data": "...",
       "accessKey": "project uuid",
       "created": "...",
       "updated": "..."
@@ -89,6 +91,7 @@ import { Bold, APIUrl } from '@site/src/components/text';
     "thumbnailUrl": "https://...",
     "modelUrl": "https://...", // nullable
     "projectUrl": "https://...",
+    "custom-data": "...",
     "accessKey": "project uuid",
     "created": "...",
     "updated": "..."
@@ -97,6 +100,7 @@ import { Bold, APIUrl } from '@site/src/components/text';
   "current": 10, // nullable
   "autoScale": false,
   "parentRoom": null, // nullable, `autoScale` 이 true 일 때만 존재
+  "custom-data": "...",
   "accessKey": "project uuid",
   "created": "...",
   "updated": "..."
@@ -122,7 +126,8 @@ import { Bold, APIUrl } from '@site/src/components/text';
   "sceneId": "scene id",
   "roomSize": 6,
   "autoScale": false,
-  "parentRoomId": "parent room id" // nullable, `autoScale` 이 true 일 때만 존재
+  "parentRoomId": "parent room id", // nullable, `autoScale` 이 true 일 때만 존재
+  "custom-data": "...",
 }
 ```
 
@@ -144,6 +149,7 @@ import { Bold, APIUrl } from '@site/src/components/text';
     "thumbnailUrl": "https://...",
     "modelUrl": "https://...", // nullable
     "projectUrl": "https://...",
+    "custom-data": "...",
     "accessKey": "project uuid",
     "created": "...",
     "updated": "..."
@@ -152,6 +158,7 @@ import { Bold, APIUrl } from '@site/src/components/text';
   "current": 10, // nullable
   "autoScale": false,
   "parentRoom": null, // nullable, `autoScale` 이 true 일 때만 존재
+  "custom-data": "...",
   "accessKey": "project uuid",
   "created": "...",
   "updated": "..."
@@ -174,7 +181,8 @@ import { Bold, APIUrl } from '@site/src/components/text';
 ```json
 {
   "name": "room name", // optional
-  "roomSize": 7 // optional
+  "roomSize": 7, // optional
+  "custom-data": "custom data", // optional
 }
 ```
 
@@ -204,6 +212,23 @@ import { Bold, APIUrl } from '@site/src/components/text';
 :::
 
 ## Room에 들어가기
+
+:::info 요청
+
+#### URL Query Parameters
+- nickname: "..."
+- avatarId: "..." // or url
+- permissionId: "..."
+- leaveUrl: "https://..." // When click 'leave' button's destination. default is `/`
+
+:::
+
+:::info 응답
+
+- Status: `200 OK`
+- Content-Type: `text/html`
+
+:::
 
 > **[POST]** `/v1/rooms/`<Bold>$\{id\}</Bold>`/enter`
 
