@@ -39,7 +39,7 @@ import { Bold, APIUrl } from '@site/src/components/text';
       "thumbnailUrl": "https://...",
       "modelUrl": "https://...", // nullable
       "projectUrl": "https://...",
-      "custom-data": "...",
+      "customData": "...",
       "accessKey": "...", // uuid
       "created": "...",
       "updated": "..."
@@ -74,7 +74,7 @@ import { Bold, APIUrl } from '@site/src/components/text';
   "thumbnailUrl": "https://...",
   "modelUrl": "https://...", // nullable
   "projectUrl": "https://...",
-  "custom-data": "...",
+  "customData": "...",
   "accessKey": "...", // uuid
   "created": "...",
   "updated": "..."
@@ -85,12 +85,19 @@ import { Bold, APIUrl } from '@site/src/components/text';
 
 ## Scene 에디터(New)
 
-> **[GET]** `/v1/scenes/new/spoke`
+> **[POST]** `/v1/scenes/new/spoke`
 
 :::info 요청
 
 #### Headers
 - Authorization: Bearer {accessToken}
+
+#### Body
+```json
+{
+  "customData": "...",
+}
+```
 
 :::
 
@@ -103,12 +110,18 @@ import { Bold, APIUrl } from '@site/src/components/text';
 
 ## Scene 에디터(ID)
 
-> **[GET]** `/v1/scenes/`<Bold>$\{id\}</Bold>`/spoke`
+> **[POST]** `/v1/scenes/`<Bold>$\{id\}</Bold>`/spoke`
 
 :::info 요청
 
 #### Headers
 - Authorization: Bearer {accessToken}
+
+#### Body
+```json
+{
+  "customData": "...",
+}
 
 :::
 
@@ -133,7 +146,7 @@ import { Bold, APIUrl } from '@site/src/components/text';
 ```json
 {
   "name": "...",
-  "custom-data": "...",
+  "customData": "...",
 }
 ```
 

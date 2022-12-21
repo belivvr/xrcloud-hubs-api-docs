@@ -39,7 +39,7 @@ import { Bold, APIUrl } from '@site/src/components/text';
       "thumbnailUrl": "https://...",
       "modelUrl": "https://...", // nullable
       "projectUrl": "https://...",
-      "custom-data": "...",
+      "customData": "...",
       "accessKey": "...", // uuid
       "created": "...",
       "updated": "..."
@@ -74,7 +74,7 @@ import { Bold, APIUrl } from '@site/src/components/text';
   "thumbnailUrl": "https://...",
   "modelUrl": "https://...", // nullable
   "projectUrl": "https://...",
-  "custom-data": "...",
+  "customData": "...",
   "accessKey": "...", // uuid
   "created": "...",
   "updated": "..."
@@ -85,12 +85,18 @@ import { Bold, APIUrl } from '@site/src/components/text';
 
 ## Get Scene Editor(New)
 
-> **[GET]** `/v1/scenes/new/spoke`
+> **[POST]** `/v1/scenes/new/spoke`
 
 :::info Request
 
 #### Headers
 - Authorization: Bearer {accessToken}
+
+#### Body
+```json
+{
+  "customData": "...",
+}
 
 :::
 
@@ -103,12 +109,19 @@ import { Bold, APIUrl } from '@site/src/components/text';
 
 ## Get Scene Editor(ID)
 
-> **[GET]** `/v1/scenes/`<Bold>$\{id\}</Bold>`/spoke`
+> **[POST]** `/v1/scenes/`<Bold>$\{id\}</Bold>`/spoke`
 
 :::info Request
 
 #### Headers
 - Authorization: Bearer {accessToken}
+
+#### Body
+```json
+{
+  "customData": "...",
+}
+```
 
 :::
 
@@ -132,7 +145,7 @@ import { Bold, APIUrl } from '@site/src/components/text';
 ```json
 {
   "name": "...",
-  "custom-data": "...",
+  "customData": "...",
 }
 ```
 
